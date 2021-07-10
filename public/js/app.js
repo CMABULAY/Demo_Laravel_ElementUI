@@ -116813,31 +116813,31 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var map = {
 	"./form": [
 		"./resources/js/pages/form.vue",
-		0,
-		4
+		4,
+		1
 	],
 	"./form.vue": [
 		"./resources/js/pages/form.vue",
-		0,
-		4
+		4,
+		1
 	],
 	"./home": [
 		"./resources/js/pages/home.vue",
-		2
+		3
 	],
 	"./home.vue": [
 		"./resources/js/pages/home.vue",
-		2
+		3
 	],
 	"./list": [
 		"./resources/js/pages/list.vue",
-		0,
-		3
+		4,
+		2
 	],
 	"./list.vue": [
 		"./resources/js/pages/list.vue",
-		0,
-		3
+		4,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -116922,8 +116922,8 @@ function page(path) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\PGAS\OneDrive\Documents\projectA\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\PGAS\OneDrive\Documents\projectA\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\PGAS\OneDrive\Documents\employee-portal-backups\05032021\Demo_Laravel_ElementUI\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\PGAS\OneDrive\Documents\employee-portal-backups\05032021\Demo_Laravel_ElementUI\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

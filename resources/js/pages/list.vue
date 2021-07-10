@@ -17,7 +17,7 @@
       label="Activity Name"
       width="180">
       <template slot-scope="scope"> 
-        <span style="margin-left: 10px">{{ scope.row.Activity_name }}</span>
+        <span style="margin-left: 10px">{{ scope.row.name }}</span>
       </template>
     </el-table-column>
 
@@ -55,11 +55,11 @@
        
     <el-form ref="form" :model="form" label-width="120px">
       <el-form-item label="Activity name">
-        <el-input v-model="form.Activity_name"></el-input>
+        <el-input v-model="form.name"></el-input>
       </el-form-item>
       <el-form-item label="Activity zone">
         <el-select
-          v-model="form.Activity_zone"
+          v-model="form.zone"
           placeholder="please select your zone"
         >
           <el-option label="Zone one" value="shanghai"></el-option>
@@ -69,9 +69,9 @@
       <el-form-item label="Activity time">
         <el-col :span="11">
           <el-date-picker
-            type="date"
+            type="date" format="yyyy-MM-dd"
             placeholder="Pick a date"
-            v-model="form.Activity_date"
+            v-model="form.date" ref="date" 
             style="width: 100%"
           ></el-date-picker>
         </el-col>
@@ -79,23 +79,23 @@
         <el-col :span="11">
           <el-time-picker
             placeholder="Pick a time"
-            v-model="form.Activity_time"
+            v-model="form.time"
             style="width: 100%"
           ></el-time-picker>
         </el-col>
       </el-form-item>
       <el-form-item label="Instant delivery">
-        <el-switch v-model="form.Instant_delivery"></el-switch>
+        <el-switch v-model="form.delivery"></el-switch>
       </el-form-item>
      
       <el-form-item label="Resources">
-        <el-radio-group v-model="form.Resources">
+        <el-radio-group v-model="form.resources">
           <el-radio label="Sponsor"></el-radio>
           <el-radio label="Venue"></el-radio>
         </el-radio-group>
       </el-form-item>
       <el-form-item label="Activity form">
-        <el-input type="textarea" v-model="form.Activity_form"></el-input>
+        <el-input type="textarea" v-model="form.form"></el-input>
       </el-form-item> 
     </el-form>
 
@@ -115,21 +115,21 @@ import Swal from 'sweetalert2'
       return {
         dialog: false,
         form: { id:'',  
-        Activity_name: "",
-        Activity_zone: "",
-        Activity_date: "",
-        Activity_time: "",
-        Instant_delivery: false, 
-        Resources: "",
-        Activity_form: ""},
-        tableData: []
+        name: "",
+        zone: "",
+        date: "",
+        time: "",
+        delivery: false, 
+        resources: "",
+        form: ""},
+        tableData: [], 
       }
     },
     created(){
       this.loadList();
     },
     methods: {
-
+    
       loadList(){ 
         axios.get('/api/demo/get')  
             .then(result=>{ 
@@ -139,8 +139,11 @@ import Swal from 'sweetalert2'
       handleEdit(data) {
         this.dialog = true
         for ( var key in data.row ) { console.log(data.row),  this.form[key] = data.row[key] ; }  
-        if(data.row.Instant_delivery === "1"){
-          this.form.Instant_delivery = true;
+        if(data.row.delivery === "1"){
+          this.form.delivery = true;
+        }
+          if(data.row.date){ 
+          this.form.date = new Date(data.row.date);
         }
       },
       handleDelete(data) {
@@ -164,7 +167,8 @@ import Swal from 'sweetalert2'
       },
       handleSubmitUpdate(){
         this.dialog = false
-        axios.post('/api/demo/update',this.form)  
+        console.log(this.form)
+        axios.post('/api/demo/update',this.$data.form)  
                 .then(result=>{  console.log(result.data)
                       if(result.data){ 
                             Swal.fire({ 
@@ -173,7 +177,7 @@ import Swal from 'sweetalert2'
                       }  
                   this.loadList();
                 }) 
-      }
+    }
 
     }
   }
