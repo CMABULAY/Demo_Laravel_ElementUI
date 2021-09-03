@@ -18,16 +18,16 @@
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.20.1",
-        "sass-loader": "^8.0.0",
+        "sass": "^1.32.6",
+        "sass-loader": "^7.3.1",
         "sweetalert2": "^11.0.18",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "element-ui": "^2.15.3",
         "package": "^1.0.1",
         "vue-plugin-axios": "^1.0.14",
-        "vue-router": "^3.5.2"
+        "vue-router": "^3.5.2",
+        "vuetify": "^2.4.11"
     }
 }

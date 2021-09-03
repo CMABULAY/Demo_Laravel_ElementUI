@@ -1,6 +1,6 @@
 <template>
 <div>
-    <topnavy/>
+    <!-- <topnavy/> -->
     <br>
     <div class="container">  
       <router-view></router-view>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import topnavy from '../Components/TopNav';
+  // import topnavy from '../Components/TopNav';
     export default {
          data() {
             return {
@@ -21,7 +21,7 @@
             console.log('Component mounted.')
         },
          components: {
-            topnavy  
+            // topnavy  
         },
     }
 </script>

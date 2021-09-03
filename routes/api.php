@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//screen1
+Route::get('get1','DemoListController@get1');
+Route::post('store1','DemoListController@store1'); 
 
-Route::get('demo/get','DemoController@get'); 
-Route::post('demo/store','DemoController@store'); 
-Route::post('demo/update','DemoController@update'); 
-Route::post('demo/delete','DemoController@delete'); 
+//screen2
+Route::get('get','DemoListController@get');
+Route::post('store','DemoListController@store'); 
+Route::post('actions','DemoListController@actions');  
+Route::post('actions1','DemoListController@actions1');  
