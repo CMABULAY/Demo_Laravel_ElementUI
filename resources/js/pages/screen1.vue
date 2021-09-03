@@ -15,16 +15,14 @@
 <v-data-table 
 :headers="table.header"
 :items="table.dataitems"
- hide-default-footer
-    :sort-by="['created_at', true]"
-    :sort-desc="[sorting, false]"
+ hide-default-footer 
 dense 
     :items-per-page="5"
     class="elevation-2"
 >
     <template v-slot:[`item.groupname`]="{ item }"   >
         <v-card-actions> 
-        <v-btn x-small text :to="'/screen2'" > {{ item.groupname }} </v-btn> 
+        <v-btn x-small text :to="'/screen2?id='+item.id" > {{ item.groupname }} </v-btn> 
       
         </v-card-actions>
     </template>

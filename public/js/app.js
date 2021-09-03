@@ -61679,59 +61679,59 @@ __webpack_require__.r(__webpack_exports__);
 var map = {
 	"./form": [
 		"./resources/js/pages/form.vue",
-		7,
-		1,
+		0,
+		2,
 		3
 	],
 	"./form.vue": [
 		"./resources/js/pages/form.vue",
-		7,
-		1,
+		0,
+		2,
 		3
 	],
 	"./home": [
 		"./resources/js/pages/home.vue",
-		5
+		7
 	],
 	"./home.vue": [
 		"./resources/js/pages/home.vue",
-		5
+		7
 	],
 	"./list": [
 		"./resources/js/pages/list.vue",
-		7,
-		1,
+		0,
+		2,
 		4
 	],
 	"./list.vue": [
 		"./resources/js/pages/list.vue",
-		7,
-		1,
+		0,
+		2,
 		4
 	],
 	"./screen1": [
 		"./resources/js/pages/screen1.vue",
-		7,
-		8,
-		6
+		0,
+		1,
+		5
 	],
 	"./screen1.vue": [
 		"./resources/js/pages/screen1.vue",
-		7,
-		8,
-		6
+		0,
+		1,
+		5
 	],
 	"./screen2": [
 		"./resources/js/pages/screen2.vue",
-		7,
-		8,
-		0
+		0,
+		1,
+		6
 	],
 	"./screen2.vue": [
 		"./resources/js/pages/screen2.vue",
-		7,
-		8,
-		0
+		0,
+		1,
+		6
 	]
 };
 function webpackAsyncContext(req) {

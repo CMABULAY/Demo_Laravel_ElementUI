@@ -16,21 +16,17 @@
       <v-data-table
         :headers="table.header"
         :items="table.dataitems"
-        hide-default-footer
-        :sort-by="['created_at', true]"
-        :sort-desc="[table.sorting, false]"
+        hide-default-footer 
         dense
         :items-per-page="5"
         class="elevation-2"
       >
         <template v-slot:[`item.id`]="{ item }">
           <v-card-actions>
-            <v-btn x-small text @click="actionsOnclick(1, item)"> TOP </v-btn>
-            <v-btn x-small text @click="actionsOnclick1(1, item)"> UP </v-btn>
-            <v-btn x-small text @click="actionsOnclick1(2, item)"> DOWN </v-btn>
-            <v-btn x-small text @click="actionsOnclick(2, item)">
-              BOTTOM
-            </v-btn>
+            <v-btn x-small text @click="actionsOnclick1('top', item)"> TOP </v-btn>
+            <v-btn x-small text @click="actionsOnclick1('up', item)"> UP </v-btn>
+            <v-btn x-small text @click="actionsOnclick1('down', item)"> DOWN </v-btn>
+            <v-btn x-small text @click="actionsOnclick1('bottom', item)"> BOTTOM </v-btn>
           </v-card-actions>
         </template>
 
@@ -49,10 +45,12 @@ export default {
     return {
       table: {
         header: [
-          { text: "Level", value: "level" },
-          { text: "Name", value: "name" },
-          { text: "Actions", value: "id" },
-          { text: "temp", class: " d-none", value: "tempid" },
+          { text: "Level", 
+            sortable: false, value: "level" },
+          { text: "Name", 
+            sortable: false,value: "name" },
+          { text: "Actions", 
+            sortable: false,value: "id" }, 
         ],
         dataitems: [],
         sorting: true,
@@ -69,51 +67,18 @@ export default {
       });
     },
     async store() {
-      await axios.post("api/store").then((result) => {
+      await axios.post("api/store",{id: this.$route.query.id}).then((result) => {
         this.get();
         alert(result.data);
       });
     },
-    async actionsOnclick(btn, data) {
-      switch (btn) {
-        case 1:
-          await axios.post("api/actions", data).then((result) => {
+  
+   async actionsOnclick1(type, data) {
+      var dt = this.table.dataitems[this.table.dataitems.indexOf(data)]  
+      await axios.post("api/actions1",{'type':type, 'current': dt}).then((result) => {  
             this.get();
-          });
-          this.sorting = true;
-          break;
-        case 2:
-          await axios.post("api/actions", data).then((result) => {
-            this.get();
-          });
-          this.sorting = false;
-          break;
-        default:
-          break;
-      }
-    },
-   async actionsOnclick1(btn, data) {
-   
-      switch (btn) {
-        case 1:
-            var dt0 = this.table.dataitems[this.table.dataitems.indexOf(data)]
-            var dt1 = this.table.dataitems[this.table.dataitems.indexOf(data)+1] 
-            await axios.post("api/actions1",{'type':'up', 'current': dt0, 'old': dt1}).then((result) => { 
-                this.get();
-            });
-          this.sorting = true;
-          break;
-        case 2:
-           var dt0 = this.table.dataitems[this.table.dataitems.indexOf(data)]
-            var dt1 = this.table.dataitems[this.table.dataitems.indexOf(data)-1] 
-            await axios.post("api/actions1",{'type':'down', 'current': dt0, 'old': dt1}).then((result) => { 
-                this.get();
-            });
-          this.sorting = false;
-          break;
-        default:
-          break;
-      }
+        });
+      this.sorting = true; 
     },
 
 
