@@ -1,27 +1,71 @@
 <template>
-<div>
-    <!-- <topnavy/> -->
-    <br>
-    <div class="container">  
-      <router-view></router-view>
-    </div>
+  <v-app style="background-color: #f1ffff">
+    <loading ref="loading" /> 
+   
+    <v-main>
+      <component :is="layout" v-if="layout" />
+    </v-main>
 
-</div>
+    <ft />
+  </v-app>
 </template>
 
 <script>
-  // import topnavy from '../Components/TopNav';
-    export default {
-         data() {
-            return {
-            activeIndex: undefined
-            }
-        },
-        mounted() {
-            console.log('Component mounted.')
-        },
-         components: {
-            // topnavy  
-        },
-    }
+import ft from "./Footer";
+import Loading from "./Loading";
+import { mapGetters } from "vuex";
+// Load layout components dynamically.
+const requireContext = require.context("~/layouts", false, /.*\.vue$/);
+
+const layouts = requireContext
+  .keys()
+  .map((file) => [file.replace(/(^.\/)|(\.vue$)/g, ""), requireContext(file)])
+  .reduce((components, [name, component]) => {
+    components[name] = component.default || component;
+    return components;
+  }, {});
+
+export default {
+  el: "#app",
+  components: {
+    Loading,
+    ft,
+  },
+
+  data: () => ({
+    layout: null,
+    defaultLayout: "default",
+  }),
+ 
+  computed: mapGetters({
+    user: "auth/user",
+  }),
+  metaInfo() {
+    const { appName } = window.config;
+
+    return {
+      title: appName,
+      titleTemplate: `%s · ${appName}`,
+    };
+  },
+
+  mounted() {
+    this.$loading = this.$refs.loading;
+  },
+
+  methods: {
+    /**
+     * Set the application layout.
+     *
+     * @param {String} layout
+     */
+    setLayout(layout) {
+      if (!layout || !layouts[layout]) {
+        layout = this.defaultLayout;
+      }
+
+      this.layout = layouts[layout];
+    },
+  },
+};
 </script>

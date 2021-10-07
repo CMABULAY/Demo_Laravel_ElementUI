@@ -61677,61 +61677,23 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./form": [
-		"./resources/js/pages/form.vue",
+	"./auth/login": [
+		"./resources/js/pages/auth/login.vue",
 		0,
-		2,
-		3
+		1
 	],
-	"./form.vue": [
-		"./resources/js/pages/form.vue",
+	"./auth/login.vue": [
+		"./resources/js/pages/auth/login.vue",
 		0,
-		2,
-		3
+		1
 	],
 	"./home": [
 		"./resources/js/pages/home.vue",
-		7
+		2
 	],
 	"./home.vue": [
 		"./resources/js/pages/home.vue",
-		7
-	],
-	"./list": [
-		"./resources/js/pages/list.vue",
-		0,
-		2,
-		4
-	],
-	"./list.vue": [
-		"./resources/js/pages/list.vue",
-		0,
-		2,
-		4
-	],
-	"./screen1": [
-		"./resources/js/pages/screen1.vue",
-		0,
-		1,
-		5
-	],
-	"./screen1.vue": [
-		"./resources/js/pages/screen1.vue",
-		0,
-		1,
-		5
-	],
-	"./screen2": [
-		"./resources/js/pages/screen2.vue",
-		0,
-		1,
-		6
-	],
-	"./screen2.vue": [
-		"./resources/js/pages/screen2.vue",
-		0,
-		1,
-		6
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -61799,21 +61761,16 @@ function page(path) {
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mode: 'history',
-  routes: [{
-    path: '*',
-    component: page('errors/page-not-found.vue')
-  }, {
+  routes: [// { path:'*', component: page('errors/page-not-found.vue') }, 
+  {
     path: '/',
-    component: page('screen1.vue')
+    component: page('home.vue')
   }, {
-    path: '/screen1',
-    name: 'screen1',
-    component: page('screen1.vue')
-  }, {
-    path: '/screen2',
-    name: 'screen2',
-    component: page('screen2.vue')
-  } // { path:'/home',  name: 'home', component: page('home.vue') },  
+    path: '/login',
+    name: 'login',
+    component: page('auth/login.vue')
+  } // { path:'/screen2', name: 'screen2', component: page('screen2.vue') },    
+  // { path:'/home',  name: 'home', component: page('home.vue') },  
   // { path:'/form', name: 'form', component: page('form.vue') },   
   // { path:'/list', name: 'list', component: page('list.vue') },    
   ]

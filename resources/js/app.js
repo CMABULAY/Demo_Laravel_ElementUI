@@ -1,21 +1,25 @@
+  
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
+ 
 import 'vuetify/dist/vuetify.min.css'
-
 import Vue from 'vue';
+import store from '~/store' 
+import router from '~/router' 
+import vuetify from '~/plugins/vuetify' 
+import App from '~/components/App'
 import Vuetify from 'vuetify'
-import VueRouter from 'vue-router';
-import routes from './router/routes';  
-import vuetify from './plugins/vuetify'
-import App from '../js/components/App'  
 
-
-Vue.use(VueRouter);    
-Vue.use(Vuetify); 
-
+import '~/plugins'
+import '~/components' 
+window.moment = require('moment');
+  
+Vue.use(Vuetify)
 new Vue({
-    el: '#app',  vuetify,
-    router: new VueRouter(routes),
+    el: '#app',
+    vuetify, 
+    store,
+    router,
     ...App
-});
+  })
  

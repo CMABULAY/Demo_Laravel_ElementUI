@@ -14,7 +14,7 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
-        "laravel-mix": "^5.0.1",
+        "laravel-mix": "^5.0.9",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
@@ -25,9 +25,18 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "js-cookie": "^3.0.1",
+        "laravel-mix-versionhash": "^1.1.7",
+        "moment": "^2.29.1",
         "package": "^1.0.1",
+        "vform": "^1.0.0",
+        "vue-i18n": "^8.24.4",
+        "vue-meta": "^2.4.0",
         "vue-plugin-axios": "^1.0.14",
         "vue-router": "^3.5.2",
-        "vuetify": "^2.4.11"
+        "vuetify": "^2.4.11",
+        "vuex": "^3.6.2",
+        "vuex-router-sync": "^5.0.0",
+        "webpack-bundle-analyzer": "^3.9.0"
     }
 }
