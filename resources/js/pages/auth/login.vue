@@ -20,7 +20,7 @@
                 <v-row>
                   <v-col cols="12" class="text-center">
                     <h3 class="font-weight-bold" style="color: #616161">
-                      Welcome
+                      Login
                     </h3>
                   </v-col>
                 </v-row>
@@ -29,6 +29,7 @@
                     <v-text-field
                       :rules="rules.formRules"
                       label="Email"
+                      hide-details=""
                       outlined
                       dense
                       persistent-placeholder
@@ -48,7 +49,7 @@
                       outlined
                       persistent-placeholder
                       :rules="rules.passwordRules"
-                      dense
+                      dense hide-details=""
                       v-model="form.password"
                       :error-messages="
                         form.errors.has('password')
@@ -65,40 +66,41 @@
 
                 <v-row>
                   <v-col cols="12">
-                    <v-btn
-                      type="submit"
-                      dark
+                    <v-btn 
+                      dark 
                       block 
-                      color="red darken-2"
+                      color="blue darken-2"
                       :loading="form.busy"
                       @click="login"
-                      style="text-transform: none; font-size: 20px"
-                      >Log In</v-btn
+                      style="text-decoration: none; font-size: 20px"
+                      >Ok</v-btn
                     >
                     
                   </v-col>
                 </v-row>
                 <v-row>
                   <v-col cols="12">
-                   <v-btn 
-                      dark  
-                      text
+                    <v-card-actions>
+                    <v-btn 
+                      dark   
                       small
-                      color="red darken-2"
+                      color="success"
                       :loading="form.busy"
                        :to="'/register'"
-                      style="text-transform: none; font-size: 20px"
+                      style="text-decoration: none; text-transform: none; font-size: 20px"
                       >Register</v-btn
                     >   <v-spacer></v-spacer> <v-btn 
                       dark  
                       text
-                      small
+                      x-small
                       color="blue darken-2"
                       :loading="form.busy"
                        :to="'/info'"
                       style="text-transform: none; font-size: 20px"
                       >Info</v-btn
                     >
+                    </v-card-actions>
+                  
                   </v-col>
                 </v-row>
               </v-card-text>

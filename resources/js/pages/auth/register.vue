@@ -26,6 +26,7 @@
                       :rules="rules.nameRules"
                       label="Name"
                       outlined
+                      hide-details=""
                       dense
                       persistent-placeholder
                       v-model="form.name"  
@@ -36,6 +37,7 @@
                       :rules="rules.formRules"
                       label="Email"
                       outlined
+                      hide-details=""
                       dense
                       persistent-placeholder
                       v-model="form.email"
@@ -43,8 +45,7 @@
                         form.errors.has('email')
                           ? form.errors.errors.email[0]
                           : ''
-                      "
-                      prepend-icon="mdi-email"
+                      " 
                     ></v-text-field>
                   </v-col>
 
@@ -55,6 +56,7 @@
                       persistent-placeholder
                       :rules="rules.passwordRules"
                       dense
+                      hide-details=""
                       v-model="form.password"
                       :error-messages="
                         form.errors.has('password')
@@ -63,8 +65,7 @@
                       "
                       :append-icon="!value ? 'mdi-eye' : 'mdi-eye-off'"
                       @click:append="() => (value = !value)"
-                      :type="!value ? 'password' : 'text'"
-                      prepend-icon="mdi-key"
+                      :type="!value ? 'password' : 'text'" 
                     ></v-text-field>
                   </v-col>
                 </v-row>
@@ -84,16 +85,8 @@
                 </v-row>
                  <v-row>
                   <v-col cols="12">
-                   <v-btn 
-                      dark  
-                      text
-                      small
-                      color="red darken-2"
-                      :loading="form.busy"
-                       :to="'/login'"
-                      style="text-transform: none; font-size: 20px"
-                      >Login</v-btn
-                    >
+                  
+                    <v-btn small color="info"  to="/login">Back to Login</v-btn>
                   </v-col>
                 </v-row>
               </v-card-text>
