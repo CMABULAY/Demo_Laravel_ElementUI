@@ -7,11 +7,11 @@ import Vue from 'vue';
 import store from '~/store' 
 import router from '~/router' 
 import vuetify from '~/plugins/vuetify' 
-import App from '~/components/App.vue'
+import App from '~/Components/App'
 import Vuetify from 'vuetify'
 
 import '~/plugins'
-import '../js/components/index.js' 
+import '~/Components' 
 window.moment = require('moment');
   
 Vue.use(Vuetify)
