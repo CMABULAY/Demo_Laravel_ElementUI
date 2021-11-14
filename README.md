@@ -1,4 +1,4 @@
- Hi, Thank you for checking out my github, 
+Hi, Thank you for checking out my github, 
 
 This repo is for quick exam/demo etc.. 
 
@@ -7,10 +7,10 @@ I been using,
 2. UI/UX - Vuejs/Vuetify 'bootstrap 4' (https://vuetifyjs.com/) 
 3. nodejs (https://nodejs.org/en/)
 4. composer (https://getcomposer.org/)
-5. mysqlremote for database for sample demo only (https://remotemysql.com/), btw this project compatible in mysql/mssqlserver
+5. Database (any) 
 6. jwt for auth (https://jwt.io/)
 
-
+btw you can use mysqlremote database (https://remotemysql.com/)  for sample demo only
 
 Download and run/develop to your pc :) 
 1. Download this repo for free :) 
