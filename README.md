@@ -13,7 +13,7 @@ I been using,
 
 Download and run/develop to your pc :) 
 1. Download this repo  
-2. Create your env file
+2. Create your env file (copy the example and just change your database connection)
 3. Connect your database
 4. cmd 'composer install'
 5. cmd 'npm install'
