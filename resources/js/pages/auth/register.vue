@@ -164,8 +164,8 @@ export default {
         await axios.post("/api/register", this.form).then((result) => {
           Swal.fire(result.data.message);
           this.form.reset();
-          this.overlay = false;
         });
+          this.overlay = false;
       }
     },
   },
