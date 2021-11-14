@@ -9,7 +9,7 @@
   </div>
 </template> 
 <script>
-import Navbar from "~/components/Nav"; 
+import Navbar from '../Components/Nav.vue'; 
 export default {
   middleware: "auth",
   name: "MainLayout", 
