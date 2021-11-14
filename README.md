@@ -6,7 +6,7 @@ I been using,
 1. PHP 7.3 / Laravel 7
 2. nodejs
 3. composer
-4. mysqlremote for database (https://remotemysql.com/)
+4. mysqlremote for database for sample demo only (https://remotemysql.com/), mysql/sql compatible
 5. jwt for auth
 
 
