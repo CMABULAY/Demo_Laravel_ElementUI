@@ -21,9 +21,7 @@ Download and run/develop to your pc :)
 7. cmd generate your jwt key 'php artisan jwt:secret'
 8. cmd clear cache 'php artisan config:clear'
 9. cmd run server 'php artisan serve'
-10. cmd compile 'npm run hot' (i use libraries for webpack.js for Single page application)
-
-11. OPTIONAL (if you want to enable email notification) cmd 'php artisan queue:listen or queue:job', upon register it will send email. 
+10. cmd compile 'npm run hot' (i use libraries for webpack.js for Single page application) 
 
 
 You can contact me at cyrusmabulay@gmail.com :) 
