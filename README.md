@@ -4,24 +4,28 @@ This repo is for quick exam/demo etc..
 
 I been using, 
 1. PHP 7.3 / Laravel 7
-2. nodejs
-3. composer
-4. mysqlremote for database for sample demo only (https://remotemysql.com/), mysql/sql compatible
-5. jwt for auth
+2. UI/UX - Vuejs/Vuetify 'bootstrap 4' (https://vuetifyjs.com/) 
+3. nodejs (https://nodejs.org/en/)
+4. composer (https://getcomposer.org/)
+5. mysqlremote for database for sample demo only (https://remotemysql.com/), btw this project compatible in mysql/mssqlserver
+6. jwt for auth (https://jwt.io/)
 
 
 
 Download and run/develop to your pc :) 
-1. Download this repo  
+1. Download this repo for free :) 
 2. Create your env file (copy the example and just change your database connection)
 3. Connect your database
-4. cmd 'composer install'
-5. cmd 'npm install'
-6. cmd migrate tables 'php artisan migrate'
-7. cmd generate your jwt key 'php artisan jwt:secret'
-8. cmd clear cache 'php artisan config:clear'
-9. cmd run server 'php artisan serve'
-10. cmd compile 'npm run hot' (i use libraries for webpack.js for Single page application) 
+4. cmd 'composer install'                       ( to install default packages )
+5. cmd 'npm install'                            ( to install all proj requirements/plugins ) 
+6. cmd 'php artisan migrate'                    ( to migrate tables to database ) 
+7. cmd 'php artisan jwt:secret'                 ( to generate your jwt key )
+8. cmd 'php artisan config:clear'               ( to clear unnecessary cache )
+9. cmd 'php artisan serve'                      ( run server ) 
+10. cmd 'npm run hot'                           (to compile application, i use libraries for webpack.js for Single page application) 
+
+11. OPTIONAL Email notification                 ( you can add your email connection in .env then run 'php artisan queue:listen or queue:work')
 
 
-You can contact me at cyrusmabulay@gmail.com :) 
+
+You can contact me for assitance at cyrusmabulay@gmail.com :) 
