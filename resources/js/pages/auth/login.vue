@@ -1,117 +1,146 @@
 <template>
-  <div style="min-width: 280px">
+  <div>
+    <v-overlay :value="overlay">
+      <v-progress-circular
+        size="55"
+        color="red darken-2"
+        indeterminate
+      ></v-progress-circular>
+    </v-overlay>
+
     <template v-if="token == ''">
-      <v-overlay :value="overlay">
-        <v-progress-circular
-          size="55"
-          color="red darken-2"
-          indeterminate
-        ></v-progress-circular>
-      </v-overlay>
-   
-          <v-card  class="mx-auto" width="400"
+      <v-row>
+        <v-col xl="2" cols="5">
+          <v-img src="/img/logo2.png"> </v-img>
+        </v-col>
+        <v-col xl="4"> </v-col>
+        <v-col xl="6" cols="12">
+          <v-card
+            class="transparent mx-auto text-white skewed"
+            flat
+            width="450"
           >
-            <v-form
-              ref="form"
-              @submit.prevent="login"
-              @keydown="form.onKeydown($event)"
-            >
-              <v-card-text class="pa-4 pa-xl-7 pa-lg-7 pa-md-5 pa-sm-5">
-                <v-row>
-                  <v-col cols="12" class="text-center">
-                    <h3 class="font-weight-bold" style="color: #616161">
-                      Login
-                    </h3>
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" md="12" class="py-1">
-                    <v-text-field
-                      :rules="rules.formRules"
-                      label="Email"
-                      hide-details=""
-                      outlined
-                      dense
-                      persistent-placeholder
-                      v-model="form.email"
-                      :error-messages="
-                        form.errors.has('email')
-                          ? form.errors.errors.email[0]
-                          : ''
-                      "
-                      prepend-icon="mdi-email"
-                    ></v-text-field>
-                  </v-col>
+            <v-img src="/img/login.png">
+              <br /><br /><br />
+              <br />
+              <v-card width="370" flat class="transparent mx-auto">
+                <v-container>
+                  <v-form
+                    ref="form"
+                    @submit.prevent="login"
+                    @keydown="form.onKeydown($event)"
+                  >
+                    <v-row>
+                      <v-col cols="12">
+                        <h3
+                          style="
+                            color: #616161;
+                            font-size: 20px;
+                            text-align: center;
+                          "
+                        >
+                          Login
+                        </h3>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" md="12" class="py-1">
+                        <v-text-field
+                          :rules="rules.formRules"
+                          label="Email"
+                          hide-details=""
+                          outlined
+                          dense
+                          persistent-placeholder
+                          v-model="form.email"
+                          :error-messages="
+                            form.errors.has('email')
+                              ? form.errors.errors.email[0]
+                              : ''
+                          "
+                        ></v-text-field>
+                      </v-col>
 
-                  <v-col cols="12" sm="12" class="py-1">
-                    <v-text-field
-                      label="Password"
-                      outlined
-                      persistent-placeholder
-                      :rules="rules.passwordRules"
-                      dense hide-details=""
-                      v-model="form.password"
-                      :error-messages="
-                        form.errors.has('password')
-                          ? form.errors.errors.password[0]
-                          : ''
-                      "
-                      :append-icon="!value ? 'mdi-eye' : 'mdi-eye-off'"
-                      @click:append="() => (value = !value)"
-                      :type="!value ? 'password' : 'text'"
-                      prepend-icon="mdi-key"
-                    ></v-text-field>
-                  </v-col>
-                </v-row>
+                      <v-col cols="12" sm="12" class="py-1">
+                        <v-text-field
+                          label="Password"
+                          outlined
+                          small
+                          :rules="rules.passwordRules"
+                          dense
+                          hide-details=""
+                          v-model="form.password"
+                          :error-messages="
+                            form.errors.has('password')
+                              ? form.errors.errors.password[0]
+                              : ''
+                          "
+                          :append-icon="!value ? 'mdi-eye' : 'mdi-eye-off'"
+                          @click:append="() => (value = !value)"
+                          :type="!value ? 'password' : 'text'"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
 
-                <v-row>
-                  <v-col cols="12">
-                    <v-btn 
-                      dark 
-                      block 
-                      color="blue darken-2"
-                      :loading="form.busy"
-                      @click="login"
-                      style="text-decoration: none; font-size: 20px"
-                      >Ok</v-btn
-                    >
-                    
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12">
-                    <v-card-actions>
-                    <v-btn 
-                      dark   
-                      small
-                      color="success"
-                      :loading="form.busy"
-                       :to="'/register'"
-                      style="text-decoration: none; text-transform: none; font-size: 20px"
-                      >Register</v-btn
-                    >   <v-spacer></v-spacer> <v-btn 
-                      dark  
-                      text
-                      x-small
-                      color="blue darken-2"
-                      :loading="form.busy"
-                       :to="'/info'"
-                      style="text-transform: none; font-size: 20px"
-                      >Info</v-btn
-                    >
-                    </v-card-actions>
-                  
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </v-form>
-          </v-card> 
-          
+                    <v-row>
+                      <v-col cols="12">
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            dark
+                            depressed
+                            color="yellow darken-2"
+                            :loading="form.busy"
+                            @click="login"
+                            style="text-decoration: none"
+                            >Ok</v-btn
+                          >
+                        </v-card-actions>
+                        <v-card-actions>
+                          <v-btn
+                            link
+                            depressed
+                            plain
+                            style="text-decoration: none; text-transform: none"
+                            text
+                            to="info"
+                          >
+                            <v-icon size="70" color="brown lighten-2"
+                              >mdi-face</v-icon
+                            >
+                          </v-btn>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            dark
+                            text
+                            color="warning"
+                            :loading="form.busy"
+                            :to="'/register'"
+                            style="text-decoration: none; text-transform: none"
+                            >Register</v-btn
+                          >
+                        </v-card-actions>
+                      </v-col>
+                    </v-row>
+                  </v-form>
+                </v-container>
+              </v-card>
+            </v-img>
+          </v-card>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col>
+          <v-img class="float-right" src="/img/other1.png" width="300"> </v-img>
+        </v-col>
+      </v-row>
     </template>
     <v-snackbar
       bottom
       v-model="snackbar.status"
       min-width="auto"
+      color="brown lighten-2"
       class="text-center"
       :vertical="$vuetify.breakpoint.xsOnly"
       timeout="2500"
@@ -124,10 +153,10 @@
         <v-btn
           :small="$vuetify.breakpoint.smAndDown"
           v-bind="attrs"
-          color="primary"
+          color="info"
           text
           @click="snackbar.active = false"
-          >Close</v-btn
+          ><v-icon>mdi-close</v-icon></v-btn
         >
       </template></v-snackbar
     >
@@ -153,10 +182,10 @@ export default {
     token: "",
     value: false,
     rules: {
-       formRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      ], 
+      formRules: [
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      ],
       passwordRules: [
         (v) => !!v || "This is required",
         (v) => (v && v.length <= 10) || "Password must be 10 characters",
@@ -189,7 +218,7 @@ export default {
                 this.snackbar.iconText = "check";
                 this.snackbar.iconColor = "primary";
                 this.snackbar.message = "Login Successful.";
-                this.$store.dispatch("auth/fetchUser"); 
+                this.$store.dispatch("auth/fetchUser");
                 this.$router.push({ name: "dashboard" }).catch((errr) => {});
               });
           })

@@ -1,22 +1,20 @@
 <template>
-  <div class="main-layout">
-    <navbar /> 
-    <div class="container">
-      <child />
-    </div>
+  <div >
+    <navbar />
+    <v-img :aspect-ratio=" 22/11.6  " :max-width="$vuetify.breakpoint.xs?'400':null"     src="/img/bg.jpg">
+      <div class="">
+        <child />
+      </div>
+    </v-img>
   </div>
-</template>
-
+</template> 
 <script>
-import Navbar from '~/components/Nav'
-
+import Navbar from "~/components/Nav"; 
 export default {
-  
   middleware: "auth",
-  name: 'MainLayout',
-
+  name: "MainLayout", 
   components: {
-    Navbar
-  }
-}
+    Navbar,
+  },
+};
 </script>

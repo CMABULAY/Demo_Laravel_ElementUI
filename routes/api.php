@@ -10,13 +10,11 @@ Route::group(['middleware' => 'guest'], function () {
   
 Route::group(['middleware' => 'api'], function () {
     Route::get('user', 'Auth\UserController@current'); 
-
-
-    //products
-    Route::get('products/get', 'Inventory\InventoryController@get'); 
-    Route::post('products/store', 'Inventory\InventoryController@store'); 
-    //order
-    Route::get('order/get', 'Inventory\OrdersController@get'); 
-    Route::post('order/store', 'Inventory\OrdersController@store'); 
+ 
+    //To do
+    Route::get('note/get', 'Notes\NoteController@getData'); 
+    Route::post('note/save', 'Notes\NoteController@saveData');  
+    Route::post('note/update', 'Notes\NoteController@updateData');  
+    Route::post('note/delete', 'Notes\NoteController@deleteData');  
  
 });
