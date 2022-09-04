@@ -1,5 +1,5 @@
 <template>
-        <v-app-bar  class="transparent"  height="110"  dense        flat     >  
+        <v-app-bar  class="transparent"  height="120"  dense        flat     >  
              <v-avatar class="mx-12" size="70"> <v-img src="/img/project_c.png"></v-img></v-avatar>
       <v-spacer></v-spacer>  
             <v-card flat class="transparent  text-right"  >
