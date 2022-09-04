@@ -57,7 +57,7 @@
           </v-col>
         </v-row>
       </v-app-bar>
-      <!-- 
+      
       <v-navigation-drawer
         height="100%"  
         app
@@ -100,7 +100,7 @@
             </v-list-item>
           </v-list>
         </template>
-      </v-navigation-drawer> -->
+      </v-navigation-drawer>
     </template>
   </div>
 </template> 

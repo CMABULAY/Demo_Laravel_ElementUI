@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #f1ffff">
+  <v-app  >
     <loading ref="loading" /> 
    
     <v-main>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ft from "./Footer";
+import ft from "../pages/projectC/Components/foot.vue";
 import Loading from "./Loading";
 import { mapGetters } from "vuex";
 // Load layout components dynamically.

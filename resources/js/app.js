@@ -1,6 +1,5 @@
   
-
-// window.Vue = require('vue');
+window.Vue = require('vue').default;
  
 import 'vuetify/dist/vuetify.min.css'
 import Vue from 'vue';
@@ -8,7 +7,7 @@ import store from '~/store'
 import router from '~/router' 
 import vuetify from '~/plugins/vuetify' 
 import App from '~/Components/App'
-import Vuetify from 'vuetify'
+import Vuetify from 'vuetify' 
 
 import '~/plugins'
 import '~/Components' 
@@ -22,4 +21,4 @@ new Vue({
     router,
     ...App
   })
- 
+  

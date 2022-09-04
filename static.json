@@ -1,0 +1,7 @@
+{
+    "proxies": {
+      "/api/": {
+        "origin": "https://shrouded-eyrie-45997.herokuapp.com/"
+      }
+    }
+  }

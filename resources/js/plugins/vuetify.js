@@ -6,17 +6,22 @@ import 'vuetify/dist/vuetify.min.css'
 
 
 Vue.use(Vuetify)
- 
 
-export default new Vuetify( {
-    theme: {
-        themes: {
-            light: {
-                primary: '#00794b',
-                danger: '#CC0022',
-                secondary: '#005cb0',
-            },
-        }
-    }
-}
-)
+const opts = {theme: {
+    themes: {
+      light: {
+        primary: '#cc0033',
+        secondary: '#717171',
+        third: '#bfc5d3',
+        fourth: '#f6f7fc',
+      },
+      dark: {
+        primary: '#cc0033',
+        secondary: '#717171',
+        third: '#bfc5d3',
+        fourth: '#f6f7fc',
+      },
+    },
+  },}
+
+export default new Vuetify(opts)

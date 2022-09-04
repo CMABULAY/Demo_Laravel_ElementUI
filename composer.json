@@ -66,5 +66,14 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },   
+
+        "version": "1.0.0",
+
+        "engines": {
+
+        "node": "14.x"
+
+        }
+    
 }
